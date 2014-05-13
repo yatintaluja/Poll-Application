@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.min.css' %}" />
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="custom">
+				<h1>Results</h1>
+				<h3>{{ poll.question }}</h3>
+
+				<ul>
+				{% for choice in poll.choice_set.all %}
+					<li>{{	choice.choice_text }} -- {{	choice.votes }} vote{{ choice.votes|pluralize }}</li>
+				{% endfor %}
+				</ul>
+				<div style="text-align:center; font-size:18px">
+				<a style="color: white;" class="btn btn-danger" href="{% url 'polls:detail' poll.id %}">Vote again?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
