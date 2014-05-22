@@ -1,2 +1,12 @@
-<h2>Invalid username and password</h2>
-<p>Click <a href="/polls/login/">here</a> to login again</p>
+{% load staticfiles %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.min.css' %}" />
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="custom"><h2>Invalid username and password</h2>
+				<a style="color: white;" class="btn btn-danger" href="/polls/login/">Log In Again</a>

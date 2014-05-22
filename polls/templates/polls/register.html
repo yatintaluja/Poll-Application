@@ -1,5 +1,25 @@
-<h2>Register</h2>
-<form action="/polls/register/" method="post">{% csrf_token %}
-{{form}}
-<input type="submit" value="Register" />
-</form>
+{% load staticfiles %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.min.css' %}" />
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h2>Register</h2>
+			<form role="form" action="/polls/register/" method="post">{% csrf_token %}
+				<div class="form-group">
+					<div class="col-md-3" style="color:black;" >
+						{{form}}
+						<input class="btn btn-danger" type="submit" value="Register" />
+					</div>
+				</div>
+			</form>
+			<div class="col-md-4 col-md-offset-2">
+				<h4>Already Registrated</h4>
+				<a style="color: white;" class="btn btn-danger" href="/polls/login/">Log In</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,13 +1,32 @@
+{% load staticfiles %}
 
-{% if form.errors %}
-	<p class ="error">Sorry, that's not a valid username or password</p>
-{% endif %}
 
-<form action="/polls/auth/" method="post">{% csrf_token %}
-	<label for="username">Username:</label>
-	<input type="text" name="username" value="" id="username">
-	<label for="password">Password:</label>
-	<input type="password" name="password" value="" id="password">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.min.css' %}" />
 
-	<input type="submit" value="login" />
-</form>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="custom">
+				{% if form.errors %}
+					<p class ="error">Sorry, that's not a valid username or password</p>
+				{% endif %}
+
+				<form  style="margin-top:30px;" 	role="form" action="/polls/auth/" method="post">{% csrf_token %}
+					<div class="form-group" class="form-horizontal">
+						<label for="username">Username:</label>
+						<input style="color:black;" type="text" name="username" value="" id="username">
+					</div>
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input style="color:black;" type="password" name="password" value="" id="password">
+					</div>
+
+						<input style="color: white; align=center; " class="btn btn-danger" type="submit" value="Log In" />
+				</form>
+				<h4>If not a user</h4> <a style="color: white;" class="btn btn-danger" href="/polls/register/">Register</a>
+			</div> 
+		</div>
+	</div>
+</div>

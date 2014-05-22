@@ -1,2 +1,19 @@
-<h2>You're logged out...</h2>
-<p>Click <a href="/polls/login/">here</a> to login again</p>
+
+{% load staticfiles %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.min.css' %}" />
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="custom">
+					<h2>You're logged out...</h2>
+						<a style="color: white; align=center; " href="/polls/login/" class="btn btn-danger">Log In Again </a>
+			</div> 
+		</div>
+	</div>
+</div>

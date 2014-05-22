@@ -69,6 +69,8 @@ def loggedin(request):
 
 
 def invalid_login(request):
+	c = {}
+	c.update(csrf(request))
 	return render_to_response('polls/invalid_login.html')
 
 def logout(request):
